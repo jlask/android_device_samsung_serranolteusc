@@ -1,5 +1,4 @@
-# Copyright (C) 2013-2016, The CyanogenMod Project
-# Copyright (C) 2017, The LineageOS Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +21,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Call this BEFORE serrano-common        
 $(call inherit-product, vendor/samsung/serranolteusc/serranolteusc-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/to/product/samsung/serrano-common/overlay \
+                        += device/samsung/serranolteusc/overlay
 
 # Inherit from serrano-common
 $(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
