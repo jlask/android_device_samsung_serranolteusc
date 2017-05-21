@@ -1,5 +1,4 @@
-# Copyright (C) 2013-2016, The CyanogenMod Project
-# Copyright (C) 2017, The LineageOS Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +20,6 @@
 # definition file).
 #
 
-ifeq ($(RECOVERY_VARIANT),twrp)
-   WITH_TWRP := true
-endif
-
 # Inherit from common serrano
 -include device/samsung/serrano-common/BoardConfigCommon.mk
 
@@ -43,13 +38,5 @@ BOARD_HAVE_NFC := true
 # LED
 BOARD_HAVE_MULTI_COLOR_LED := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/serranolteusc/ril/
-
-ifeq ($(WITH_TWRP),true)
-   TARGET_RECOVERY_DEVICE_DIRS += device/samsung/serranolteusc
-   TARGET_RECOVERY_FSTAB += device/samsung/serranolteusc/rootdir/twrp.fstab
-endif
