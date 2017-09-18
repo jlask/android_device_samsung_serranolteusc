@@ -28,6 +28,7 @@
 #include <hardware/hardware.h>
 #include <sound/a2220.h>
 #include <fcntl.h>
+#include <platform.h>
 
 int mA2220Fd;
 int mA2220Mode;
@@ -48,9 +49,9 @@ int setA2220Mode(int mode)
           }
        }
        rc = ioctl(mA2220Fd, A2220_SET_CONFIG, mode);
-       if (rc < 0)
+       if (rc < 0) {
           ALOGE("%s: ioctl failed, errno=%d", __func__, errno);
-       else {
+       } else {
           mA2220Mode = mode;
           ALOGD("%s: Audience A2220 mode is set to %d.", __func__, mode);
        }
@@ -76,7 +77,7 @@ static int amp_enable_output_devices(amplifier_device_t *device,
     if (devices && devices == SND_DEVICE_OUT_VOICE_HANDSET) {
        if (enable) {
           setA2220Mode(A2220_PATH_INCALL_RECEIVER_NSON);
-       else {
+       } else {
           setA2220Mode(A2220_PATH_INCALL_RECEIVER_NSOFF);
        }
     }
