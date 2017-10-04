@@ -22,6 +22,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Call this BEFORE serrano-common        
 $(call inherit-product, vendor/samsung/serranolteusc/serranolteusc-vendor.mk)
 
+PRODUCT_PACKAGES += \
+    audio_amplifier.msm8960
+
 DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
 
 # Inherit from serrano-common

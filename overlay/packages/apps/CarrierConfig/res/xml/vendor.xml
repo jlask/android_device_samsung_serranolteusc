@@ -3,5 +3,6 @@
 <carrier_config>
 <boolean name="world_phone_bool" value="false" />
 <boolean name="show_cdma_choices_bool" value="true" />
+<boolean name="carrier_eri_file_name_string" value="eri_311580.xml" />
 </carrier_config>
 </carrier_config_list>
