@@ -14,16 +14,12 @@
 # limitations under the License.
 #
 
-# RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SerranoLTEUSCRIL
-
 # Get non-open-source specific aspects
 # Call this BEFORE serrano-common        
 $(call inherit-product, vendor/samsung/serranolteusc/serranolteusc-vendor.mk)
 
 PRODUCT_PACKAGES += \
-    audio_amplifier.msm8960
+    audio_amplifier.msm8960 
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
 
@@ -33,5 +29,11 @@ $(call inherit-product, device/samsung/serrano-common/nfc.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+    device/samsung/serranolteusc/gps.conf:system/etc/gps.conf
 
+# FM radio
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl \
+    FM2 \
+    qcom.fmradio

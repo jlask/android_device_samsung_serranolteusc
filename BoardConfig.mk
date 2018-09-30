@@ -21,10 +21,6 @@
 # definition file).
 #
 
-ifeq ($(RECOVERY_VARIANT),twrp)
-   WITH_TWRP := true
-endif
-
 # Inherit from common serrano
 -include device/samsung/serrano-common/BoardConfigCommon.mk
 
@@ -46,10 +42,9 @@ BOARD_HAVE_MULTI_COLOR_LED := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Custom RIL class
-BOARD_RIL_CLASS := ../../../device/samsung/serranolteusc/ril/
-
 ifeq ($(WITH_TWRP),true)
    TARGET_RECOVERY_DEVICE_DIRS += device/samsung/serranolteusc
    TARGET_RECOVERY_FSTAB += device/samsung/serranolteusc/rootdir/twrp.fstab
+   TARGET_USERIMAGES_USE_F2FS := false
+   TARGET_GCC_VERSION := 4.8
 endif

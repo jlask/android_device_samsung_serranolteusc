@@ -1,8 +1,12 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
-<carrier_config>
-<boolean name="world_phone_bool" value="false" />
-<boolean name="show_cdma_choices_bool" value="true" />
-<boolean name="carrier_eri_file_name_string" value="eri_311580.xml" />
-</carrier_config>
+    <carrier_config>
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxMessageSize" value="2097152" />
+        <boolean name="config_enable_mms_with_mobile_data_off" value="true" />
+        <boolean name="apn_expand_bool" value="true" />
+        <boolean name="allow_adding_apns_bool" value="true" />
+        <boolean name="world_phone_bool" value="false" />
+    </carrier_config>
 </carrier_config_list>
