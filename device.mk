@@ -23,14 +23,14 @@ PRODUCT_PACKAGES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
 
-# Inherit from serrano-common
-$(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
-$(call inherit-product, device/samsung/serrano-common/nfc.mk)
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    device/samsung/serranolteusc/gps.conf:system/etc/gps.conf
+    device/samsung/serranolteusc/rootdir/etc/gps.conf:system/etc/gps.conf
+
+# Inherit from serrano-common
+$(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
+$(call inherit-product, device/samsung/serrano-common/nfc.mk)
 
 # FM radio
 PRODUCT_PACKAGES += \
