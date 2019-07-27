@@ -1,7 +1,8 @@
 # system.prop for serranolteusc
 #
 
-rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+#rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libpath=/vendor/lib/libsec-ril.so
 
 persist.radio.snapshot_enabled=1
 persist.radio.snapshot_timer=22

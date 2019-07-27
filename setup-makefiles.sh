@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright (C) 2013 The CyanogenMod Project
 # Copyright (C) 2019 The LineageOS Project
@@ -15,14 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+	
 set -e
 	
+# Required!
 export DEVICE=serranolteusc
 	
 export DEVICE_COMMON=serrano-common
 export VENDOR=samsung
 export DEVICE_BRINGUP_YEAR=2013
+./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
 	
 	
-./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
 

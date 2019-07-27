@@ -33,6 +33,7 @@ TARGET_OTA_ASSERT_DEVICE := serranolteusc,R890,SCH-R890
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_serrano_usc_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # NFC
 BOARD_HAVE_NFC := true
