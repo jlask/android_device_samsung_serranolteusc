@@ -22,13 +22,16 @@
 #
 
 # Inherit from common serrano
--include device/samsung/serrano-common/BoardConfigCommon.mk
+-include $(COMMON_PATH)/BoardConfigCommon.mk
+
+# Inherit from proprietary vendor
+-include $(DEVICE_VENDOR_PATH)/BoardConfigVendor.mk
+
+# Manifest
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := serranolteusc,R890,SCH-R890
-
-# Inherit from proprietary vendor
--include vendor/samsung/serranolteusc/BoardConfigVendor.mk
 
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_serrano_usc_defconfig

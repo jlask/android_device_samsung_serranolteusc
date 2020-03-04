@@ -16,25 +16,20 @@
 
 # Get non-open-source specific aspects
 # Call this BEFORE serrano-common        
-$(call inherit-product, vendor/samsung/serranolteusc/serranolteusc-vendor.mk)
+$(call inherit-product, $(DEVICE_VENDOR_PATH)/serranolteusc-vendor.mk)
 
 PRODUCT_PACKAGES += \
     audio_amplifier.msm8960 
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
+# Inherit from serrano-common
+$(call inherit-product, $(COMMON_PATH)/serrano-common.mk)
+$(call inherit-product, $(COMMON_PATH)/nfc.mk)
+
+# Device overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    device/samsung/serranolteusc/rootdir/etc/gps.conf:system/etc/gps.conf
+    $(DEVICE_PATH)/rootdir/etc/gps.conf:system/etc/gps.conf
 
-# Inherit from serrano-common
-$(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
-$(call inherit-product, device/samsung/serrano-common/nfc.mk)
-
-# FM radio
-#PRODUCT_PACKAGES += \
-#
-#    android.hardware.broadcastradio@1.0-impl \
-#    FM2 \
-#    qcom.fmradio
