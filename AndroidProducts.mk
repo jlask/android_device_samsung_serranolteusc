@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_serranolteusc.mk
+    $(LOCAL_DIR)/aicp_serranolteusc.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_serranolteusc-userdebug
+    aicp_serranolteusc-userdebug
