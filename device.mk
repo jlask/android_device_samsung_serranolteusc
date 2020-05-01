@@ -25,16 +25,9 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/serranolteusc/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
-    device/samsung/serranolteusc/rootdir/etc/gps.conf:system/etc/gps.conf
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml
 
 # Inherit from serrano-common
 $(call inherit-product, device/samsung/serrano-common/serrano-common.mk)
 $(call inherit-product, device/samsung/serrano-common/nfc.mk)
 
-# FM radio
-#PRODUCT_PACKAGES += \
-#
-#    android.hardware.broadcastradio@1.0-impl \
-#    FM2 \
-#    qcom.fmradio

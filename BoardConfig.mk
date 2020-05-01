@@ -33,7 +33,7 @@ TARGET_OTA_ASSERT_DEVICE := serranolteusc,R890,SCH-R890
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := msm8930_serrano_usc_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=true user_debug=22 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # NFC
 BOARD_HAVE_NFC := true
@@ -44,9 +44,3 @@ BOARD_HAVE_MULTI_COLOR_LED := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-ifeq ($(WITH_TWRP),true)
-   TARGET_RECOVERY_DEVICE_DIRS += device/samsung/serranolteusc
-   TARGET_RECOVERY_FSTAB += device/samsung/serranolteusc/rootdir/twrp.fstab
-   TARGET_USERIMAGES_USE_F2FS := false
-   TARGET_GCC_VERSION := 4.8
-endif
